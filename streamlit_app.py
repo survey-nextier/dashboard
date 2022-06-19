@@ -23,7 +23,7 @@ Brief description about this section
 
 left_column, right_column = st.columns(2)
 
-left_column.selectbox("Select State", df['MAIN STATE'].unique().sort())
+left_column.selectbox("Select State", df['MAIN STATE'].unique())
 
 right_column.selectbox("Select Media Type", df['MEDIA TYPE'].unique())
 
