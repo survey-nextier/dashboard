@@ -4,30 +4,34 @@ import pandas as pd
 
 import numpy as np
 
+st.set_page_config(page_title="Unicef Media Mapping", page_icon=":radio:", layout="wide")
+
+
 sheet = "https://drive.google.com/uc?id=1O6-TKQMcHlMbo5mTvW9HH_t0QbEsocO1"
 
 df = pd.read_csv(sheet)
 
 
-
-
-
-st.set_page_config(page_title="Unicef Media Mapping", page_icon=":radio:", layout="wide")
-
 '''
-# Media Mapping
+# Unicef Media Mapping
 Brief description about this section
 '''
 
 # df.columns
 
-left_column, right_column = st.columns(2)
+# left_column, right_column = st.columns(2)
 
-left_column.selectbox("Select State", df['MAIN STATE'].unique())
+# left_column.selectbox("Select State", df['MAIN STATE'].unique())
 
-right_column.selectbox("Select Media Type", df['MEDIA TYPE'].unique())
+# right_column.selectbox("Select Media Type", df['MEDIA TYPE'].unique())
+
+# with left_column:
+st.sidebar.header("Please Select a filter")
+media_type = st.sidebar.multiselect("Select Media Type", options=df['MEDIA TYPE'].unique(), default=df['MEDIA TYPE'].unique())
 
 
+# media_type
+df = df.query("`MEDIA TYPE` == @media_type")
 
 cols = ['MEDIA OUTLET', 'MEDIA TYPE',  'ESTIMATED AUDIENCE SIZE', 'REGION', 'MAIN STATE', 'MAIN STATE %', 'MALE', 'FEMALE', 'CHILDREN (7 - 12)', 'TEENS (13 - 17)', 'YOUTH/YOUNG ADULTS (18 - 29)', 'MIDDLE AGED ADULTS (30 - 44)', 'OLDER ADULTS', 'UPPER CLASS', 'UPPER MIDDLE CLASS', 'LOWER MIDDLE CLASS', 'LOWER CLASS', 'BELOW SUBSISTENCE' 
     , 'MARRIED', 'SINGLE', 'PRIMARY ORLOWER', 'HIGH/SECONDARY SCHOOL', 'DIPLOMA/NCE', '   DEGREE, HND OR HIGHER'  
