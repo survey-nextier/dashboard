@@ -4,7 +4,7 @@ import pandas as pd
 
 import numpy as np
 
-st.set_page_config(page_title="Unicef Media Mapping", page_icon=":radio:", layout="wide")
+st.set_page_config(page_title="Unicef Media Mapping", layout="wide")
 
 sheet = "https://drive.google.com/uc?id=1Z_GxrmNDcpoSO-ZtWrMIbjdTDi7Ijjtm"
 
@@ -23,7 +23,7 @@ df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
 # eas.dtype
 
 '''
-# UNICEF Media Mapping
+# UNICEF MEDIA MAPPING
 Brief description about this section
 '''
 
