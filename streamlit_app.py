@@ -25,7 +25,7 @@ pages = ['TV', 'Radio', 'Daily, Weekly & Magazine', 'Online Magazine', 'Online N
 
 with st.sidebar:
     page = option_menu(
-        menu_name="Media Type",
+        menu_title ="Media Type",
         options= pages
         
     )
