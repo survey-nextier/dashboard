@@ -6,28 +6,42 @@ import numpy as np
 
 st.set_page_config(page_title="Unicef Media Mapping", page_icon=":radio:", layout="wide")
 
-
-sheet = "https://drive.google.com/uc?id=1O6-TKQMcHlMbo5mTvW9HH_t0QbEsocO1"
+sheet = "https://drive.google.com/uc?id=1Z_GxrmNDcpoSO-ZtWrMIbjdTDi7Ijjtm"
 
 df = pd.read_csv(sheet)
 
 
+df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
+
+
+# df['ESTIMATED AUDIENCE SIZE'].dtype
+
+
+
+# eas = df['ESTIMATED AUDIENCE SIZE']
+
+# eas.dtype
+
 '''
-# Unicef Media Mapping
+# UNICEF Media Mapping
 Brief description about this section
 '''
 
 # df.columns
 
-# left_column, right_column = st.columns(2)
+left_column, right_column = st.columns(2)
 
 # left_column.selectbox("Select State", df['MAIN STATE'].unique())
 
 # right_column.selectbox("Select Media Type", df['MEDIA TYPE'].unique())
 
-# with left_column:
-st.sidebar.header("Please Select a filter")
-media_type = st.sidebar.multiselect("Select Media Type", options=df['MEDIA TYPE'].unique(), default=df['MEDIA TYPE'].unique())
+with left_column:
+# st.sidebar.header("Please Select a filter")
+    media_type = st.selectbox("Select Media Type", options=df['MEDIA TYPE'].unique(),  )
+
+
+df =  df.sort_values(by=['ESTIMATED AUDIENCE SIZE'], ascending=False)
+
 
 
 # media_type
@@ -66,4 +80,9 @@ cols = ['MEDIA OUTLET', 'MEDIA TYPE', 'WORKING', 'SELF -MPLOYED', 'STUDENT/APPRE
 df_3 = df[cols]
 
 AgGrid(df_3)
+
+
+st.markdown(f'''
+<a href="{sheet}">Download csv</a>
+''', unsafe_allow_html=True)
 
