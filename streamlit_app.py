@@ -25,6 +25,9 @@ st.sidebar.header("Pages")
 
 choice = st.sidebar.selectbox("", menu)
 
+if st.sidebar.button("Contacts"):
+    pass
+
 
 # eas = df['ESTIMATED AUDIENCE SIZE']
 
