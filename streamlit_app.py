@@ -23,7 +23,7 @@ menu = ['TV', 'Radio']
 
 st.sidebar.header("Pages")
 
-choice = st.sidebar.select("Menu", menu)
+choice = st.sidebar.selectbox("Menu", menu)
 
 
 # eas = df['ESTIMATED AUDIENCE SIZE']
