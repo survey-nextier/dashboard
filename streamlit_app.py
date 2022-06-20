@@ -16,6 +16,8 @@ df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
 
 # df['ESTIMATED AUDIENCE SIZE'].dtype
 
+df['REGION']
+
 
 
 # eas = df['ESTIMATED AUDIENCE SIZE']
