@@ -1,6 +1,7 @@
 import streamlit as st
 from st_aggrid import AgGrid
 import pandas as pd
+from streamlit_option_menu import option_menu
 
 import numpy as np
 
