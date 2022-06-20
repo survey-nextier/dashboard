@@ -19,11 +19,11 @@ df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
 
 
 
-menu = ['TV', 'Radio']
+menu = ['TV', 'Radio', 'Daily, Weekly & Magazine', 'Online Magazine', 'Online Newspaper']
 
 st.sidebar.header("Pages")
 
-choice = st.sidebar.selectbox("Menu", menu)
+choice = st.sidebar.selectbox("", menu)
 
 
 # eas = df['ESTIMATED AUDIENCE SIZE']
