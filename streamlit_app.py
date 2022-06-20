@@ -19,14 +19,15 @@ df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
 
 
 
-menu = ['TV', 'Radio', 'Daily, Weekly & Magazine', 'Online Magazine', 'Online Newspaper']
+pages = ['TV', 'Radio', 'Daily, Weekly & Magazine', 'Online Magazine', 'Online Newspaper']
 
-st.sidebar.header("Pages")
 
-choice = st.sidebar.selectbox("", menu)
-
-if st.sidebar.button("Contacts"):
-    pass
+with st.sidebar:
+    page = st.option_menu(
+        menu_name="Media Type",
+        options= pages
+        
+    )
 
 
 # eas = df['ESTIMATED AUDIENCE SIZE']
