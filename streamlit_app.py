@@ -16,7 +16,7 @@ df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
 
 # df['ESTIMATED AUDIENCE SIZE'].dtype
 
-df['REGION']
+st.datatable(df['REGION'])
 
 
 
