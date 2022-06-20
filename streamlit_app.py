@@ -16,8 +16,14 @@ df['ESTIMATED AUDIENCE SIZE'] = df['ESTIMATED AUDIENCE SIZE'].astype(int)
 
 # df['ESTIMATED AUDIENCE SIZE'].dtype
 
-st.table(df['REGION'])
 
+
+
+menu = ['TV', 'Radio']
+
+st.sidebar.header("Pages")
+
+choice = st.sidebar.select("Menu", menu)
 
 
 # eas = df['ESTIMATED AUDIENCE SIZE']
